@@ -5,18 +5,20 @@ Fill in the function(s) below, then run this file to test your work:
 '''
 
 def make_board():
-    # TODO
-    raise NotImplementedError
+    board = [[' ', ' ', ' '], [' ', ' ', ' '], [' ', ' ', ' ']]
+    return board
 
 
 def set_cell(board, row, col, mark):
-    # TODO
-    raise NotImplementedError
+    board[row][col] = mark
 
 
 def is_full(board):
-    # TODO
-    raise NotImplementedError
+    for row in board:
+        for column in row:
+            if column == ' ':
+                return False
+    return True
 
 if __name__ == "__main__":
     import os, sys

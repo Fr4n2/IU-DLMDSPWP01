@@ -5,8 +5,15 @@ Fill in the function(s) below, then run this file to test your work:
 '''
 
 def read_xy_csv(path):
-    # TODO
-    raise NotImplementedError
+    data = []
+    with open(path, "r") as file:
+        for line in file:
+            columns = line.split(",")
+            if not columns[0] == 'x' and not columns[1] == 'y\n':
+                    data.append((float(columns[0]), float(columns[1])))
+    print(data)
+    return data
+
 
 if __name__ == "__main__":
     import os, sys

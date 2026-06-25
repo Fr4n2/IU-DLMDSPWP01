@@ -5,8 +5,26 @@ Fill in the function(s) below, then run this file to test your work:
 '''
 
 def best_fit(y_train, candidates):
-    # TODO
-    raise NotImplementedError
+    solution = ""
+    smallest_squared_error = float('inf')
+    for name, series in candidates.items():
+        error_size = sum_squared_error(y_train, series)
+        if error_size < smallest_squared_error:
+            solution = name
+            smallest_squared_error = error_size
+    return solution
+
+    
+
+def sum_squared_error(y_true, y_pred):
+    if len(y_true) != len(y_pred):
+        raise ValueError("Different length of input values")
+    sum_squared_error = 0.0
+    
+    for i in range(len(y_true)):
+        sum_squared_error = sum_squared_error + (y_true[i] - y_pred[i])**2
+
+    return sum_squared_error   
 
 if __name__ == "__main__":
     import os, sys

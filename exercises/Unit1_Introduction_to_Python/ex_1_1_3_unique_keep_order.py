@@ -5,8 +5,14 @@ Fill in the function(s) below, then run this file to test your work:
 '''
 
 def unique_keep_order(names):
-    # TODO
-    raise NotImplementedError
+    unique_list = []
+    unique_set = set() # searching in Set is faster with O(n), instead of searching the list with O(n²)
+    for name in names:
+        if name not in unique_set:
+            unique_list.append(name)
+            unique_set.add(name)
+    return unique_list
+
 
 if __name__ == "__main__":
     import os, sys
