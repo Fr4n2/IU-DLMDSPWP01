@@ -6,26 +6,26 @@ Fill in the function(s) below, then run this file to test your work:
 
 class Entity:
     def __init__(self, name, hp):
-        # TODO
-        raise NotImplementedError
+        self.name = name
+        self.hp = hp
 
     def is_alive(self):
-        raise NotImplementedError
+        return self.hp > 0
 
 
 class Player(Entity):
     def __init__(self, name, hp):
-        # TODO (use super())
-        raise NotImplementedError
+        super().__init__(name, hp)
+        self.inventory = []
 
 
 class Enemy(Entity):
     def __init__(self, name, hp, damage):
-        # TODO (use super())
-        raise NotImplementedError
+        super().__init__(name, hp)
+        self.damage = damage
 
     def attack(self, target):
-        raise NotImplementedError
+        target.hp = target.hp - self.damage
 
 if __name__ == "__main__":
     import os, sys

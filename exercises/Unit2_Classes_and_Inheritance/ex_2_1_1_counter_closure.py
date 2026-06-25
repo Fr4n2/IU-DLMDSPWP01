@@ -4,9 +4,15 @@ Fill in the function(s) below, then run this file to test your work:
     python ex_2_1_1_*.py
 '''
 
+
 def make_counter(start=0):
-    # TODO
-    raise NotImplementedError
+    counter = start
+    
+    def increment_counter():
+        nonlocal counter
+        counter = counter+1
+        return counter
+    return increment_counter
 
 if __name__ == "__main__":
     import os, sys

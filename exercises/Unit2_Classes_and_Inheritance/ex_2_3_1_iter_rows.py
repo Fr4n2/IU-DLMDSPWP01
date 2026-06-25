@@ -5,8 +5,10 @@ Fill in the function(s) below, then run this file to test your work:
 '''
 
 def iter_rows(xs, ys):
-    # TODO (use yield)
-    raise NotImplementedError
+    i = 0
+    while i < len(xs):
+        yield (xs[i], ys[i])
+        i = i + 1
 
 if __name__ == "__main__":
     import os, sys

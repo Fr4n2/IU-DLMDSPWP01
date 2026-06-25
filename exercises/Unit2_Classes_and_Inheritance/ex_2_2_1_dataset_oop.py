@@ -6,14 +6,21 @@ Fill in the function(s) below, then run this file to test your work:
 
 class DataSet:
     def __init__(self, x, y):
-        # TODO
-        raise NotImplementedError
+        self.x = x
+        self.y = y
 
     def __len__(self):
-        raise NotImplementedError
+        return len(self.x)
 
     def sse(self, other):
-        raise NotImplementedError
+        if len(self) != len(other):
+            raise ValueError("Different length of input values")
+        sum_squared_error = 0.0
+        
+        for i in range(len(self.y)):
+            sum_squared_error = sum_squared_error + (self.y[i] - other.y[i])**2
+        return sum_squared_error
+        
 
 
 class TrainingData(DataSet):
@@ -22,8 +29,11 @@ class TrainingData(DataSet):
 
 class IdealFunction(DataSet):
     def __init__(self, x, y, name=""):
-        # TODO
-        raise NotImplementedError
+        super().__init__(x,y)
+        self.name = name
+        
+    def __repr__(self):
+        return self.name
 
 if __name__ == "__main__":
     import os, sys
