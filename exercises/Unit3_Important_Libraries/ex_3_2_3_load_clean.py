@@ -8,8 +8,10 @@ import pandas as pd
 
 
 def load_clean(path):
-    # TODO
-    raise NotImplementedError
+    table = pd.read_csv(path)
+    mean = table['y'].mean()
+    table = table.fillna({'y': mean})
+    return table
 
 if __name__ == "__main__":
     import os, sys

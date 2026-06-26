@@ -9,8 +9,9 @@ from sqlalchemy import create_engine
 
 
 def df_to_sqlite(df, table, db_url="sqlite:///out.db"):
-    # TODO
-    raise NotImplementedError
+    engine = create_engine(db_url, echo=True)
+
+    df.to_sql(table, engine, if_exists="replace", index=False)
 
 if __name__ == "__main__":
     import os, sys

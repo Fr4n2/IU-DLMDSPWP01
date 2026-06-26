@@ -8,8 +8,12 @@ from sklearn.linear_model import LinearRegression
 
 
 def fit_line(x, y):
-    # TODO
-    raise NotImplementedError
+    model = LinearRegression()
+    model.fit(x, y)
+
+    print((model.coef_[0], model.intercept_))
+          
+    return (model.coef_[0], model.intercept_)
 
 if __name__ == "__main__":
     import os, sys

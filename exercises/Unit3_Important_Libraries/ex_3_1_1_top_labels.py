@@ -4,9 +4,19 @@ Fill in the function(s) below, then run this file to test your work:
     python ex_3_1_1_*.py
 '''
 
+from collections import Counter
+
 def top_labels(labels, n=2):
-    # TODO
-    raise NotImplementedError
+    counter = Counter(labels)
+    list_of_top_labels = counter.most_common(n)
+    # list_of_top_labels = []
+    # for label, count in counter.items():
+    #     print(count)
+    #     if count >= n:
+    #         list_of_top_labels.append((label, count))
+    return list_of_top_labels
+
+    
 
 if __name__ == "__main__":
     import os, sys

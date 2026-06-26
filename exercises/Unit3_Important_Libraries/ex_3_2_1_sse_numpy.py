@@ -8,8 +8,13 @@ import numpy as np
 
 
 def sse_np(y_true, y_pred):
-    # TODO (vectorised, no for-loop)
-    raise NotImplementedError
+    np_y_true = np.array(y_true)
+    np_y_pred = np.array(y_pred)
+
+    error = np_y_true - np_y_pred
+    squared_error = error**2
+
+    return squared_error.sum()
 
 if __name__ == "__main__":
     import os, sys
