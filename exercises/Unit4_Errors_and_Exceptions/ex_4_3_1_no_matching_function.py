@@ -8,12 +8,15 @@ import math
 
 
 class NoMatchingFunctionError(Exception):
+
     pass
 
 
 def assign(point_dev, max_train_dev):
-    # TODO
-    raise NotImplementedError
+    if point_dev <= max_train_dev * math.sqrt(2):
+        return "matched"
+    else:
+        raise NoMatchingFunctionError
 
 if __name__ == "__main__":
     import os, sys

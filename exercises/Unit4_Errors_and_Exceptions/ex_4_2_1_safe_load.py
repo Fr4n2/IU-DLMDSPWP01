@@ -5,8 +5,22 @@ Fill in the function(s) below, then run this file to test your work:
 '''
 
 def safe_load(path):
-    # TODO (use try/except)
-    raise NotImplementedError
+    data = []
+    try:
+        with open(path, "r") as file:
+            for line in file:
+                try:
+                    # print(line)
+                    columns = line.split(",")
+                    data.append((float(columns[0]), float(columns[1])))
+                except Exception as e:
+                    print(e)
+                    continue
+    except FileNotFoundError as fnfe:
+         print(fnfe)
+    
+    return data
+
 
 if __name__ == "__main__":
     import os, sys

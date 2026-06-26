@@ -8,8 +8,15 @@ import sys
 
 
 def safe_div(a, b):
-    # TODO (use try/except)
-    raise NotImplementedError
+    try:
+        value = a / b
+    except ZeroDivisionError as zde:
+        print(type(zde))
+        return type(zde).__name__
+    else:
+        return value
+    
+
 
 if __name__ == "__main__":
     import os, sys

@@ -5,8 +5,11 @@ Fill in the function(s) below, then run this file to test your work:
 '''
 
 GIT_COMMANDS = [
-    # "git clone <repo-url>",
-    # ... fill in the rest in order ...
+    "git clone <repo-url>",
+    "git checkout <branch>",
+    "git add <filename>",
+    "git commit -m 'Message'",
+    "git push origin <branch>"
 ]
 
 if __name__ == "__main__":

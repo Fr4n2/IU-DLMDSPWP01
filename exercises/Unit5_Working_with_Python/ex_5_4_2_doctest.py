@@ -5,12 +5,19 @@ Fill in the function(s) below, then run this file to test your work:
 '''
 
 def square(x):
-    """Return the square of x.
-
-    Add a doctest example below, e.g. >>> square(3) returning 9.
     """
-    # TODO
-    raise NotImplementedError
+    Return the square of x.
+
+    >>> square(3)
+    9
+    >>> square(-1)
+    1
+    >>> square(10)
+    100
+    >>> square(1)
+    1
+    """
+    return x*x
 
 if __name__ == "__main__":
     import os, sys
