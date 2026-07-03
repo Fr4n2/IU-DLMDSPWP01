@@ -1,7 +1,7 @@
 # IU - DLMDSPWP01 - Programming with Python - Exercise & Assessment Sandbox
 
 
-> **Disclaimer:** These are not official university exercises! Since no official practice material exists, I developed these exercises for the "Programming with Python" module to practice the topics from the course script.
+> **Disclaimer:** These are not official university exercises! Since no official practice material exists, I developed these exercises using a LLM for the "Programming with Python" module to practice the topics from the course script.
 
 ## How it Works
 The repository is split into unit-based folders. Each exercise includes a professional task description (`.md`) and a template (`.py`) for your code. 
